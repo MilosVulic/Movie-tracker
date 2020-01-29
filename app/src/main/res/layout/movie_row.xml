@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            card_view:cardCornerRadius="2dp"
+            card_view:cardElevation="3dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:id="@+id/imageViewMovie"
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:scaleType="centerCrop"
+                    card_view:layout_constraintBottom_toBottomOf="parent"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                    android:id="@+id/labelMovieName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Movie name: "
+                    card_view:layout_constraintBottom_toTopOf="@+id/labelMovieGenre"
+                    card_view:layout_constraintStart_toEndOf="@+id/imageViewMovie"
+                    card_view:layout_constraintTop_toTopOf="@+id/imageViewMovie" />
+
+            <TextView
+                    android:id="@+id/textVieMovieName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    card_view:layout_constraintBottom_toBottomOf="@+id/labelMovieName"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toEndOf="@+id/labelMovieName"
+                    card_view:layout_constraintTop_toTopOf="@+id/labelMovieName" />
+
+
+            <TextView
+                    android:id="@+id/labelMovieGenre"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Movie genre: "
+                    card_view:layout_constraintBottom_toTopOf="@+id/labelYear"
+                    card_view:layout_constraintStart_toStartOf="@+id/labelMovieName"
+                    card_view:layout_constraintTop_toBottomOf="@+id/labelMovieName" />
+
+            <TextView
+                    android:id="@+id/textViewMovieGenre"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toStartOf="@+id/textVieMovieName"
+                    card_view:layout_constraintTop_toBottomOf="@+id/textVieMovieName" />
+
+            <TextView
+                    android:id="@+id/labelYear"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Release year: "
+                    card_view:layout_constraintBottom_toTopOf="@+id/labelDuration"
+                    card_view:layout_constraintStart_toStartOf="@+id/labelMovieGenre"
+                    card_view:layout_constraintTop_toBottomOf="@+id/labelMovieGenre" />
+
+            <TextView
+                    android:id="@+id/textViewMovieYear"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_height="wrap_content"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toStartOf="@+id/textViewMovieGenre"
+                    card_view:layout_constraintTop_toBottomOf="@+id/textViewMovieGenre"/>
+
+
+            <TextView
+                    android:id="@+id/labelDuration"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Duration: "
+                    card_view:layout_constraintBottom_toBottomOf="@+id/imageViewMovie"
+                    card_view:layout_constraintStart_toStartOf="@+id/labelYear"
+                    card_view:layout_constraintTop_toBottomOf="@+id/labelYear" />
+
+            <TextView
+                    android:id="@+id/textViewMovieDuration"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_height="wrap_content"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toStartOf="@+id/textViewMovieYear"
+                    card_view:layout_constraintTop_toBottomOf="@+id/textViewMovieYear"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
