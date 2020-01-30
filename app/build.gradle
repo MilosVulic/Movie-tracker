@@ -62,4 +62,5 @@ dependencies {
     // Pie chart library
     def pieChartVersion = "0.0.3"
     implementation "com.github.AnyChart:AnyChart-Android:$pieChartVersion"
+
 }

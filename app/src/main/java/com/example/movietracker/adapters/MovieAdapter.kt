@@ -27,7 +27,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieHolder>() {
     override fun onBindViewHolder(holder: MovieHolder, position: Int) {
         val currentMovie = listMovies[position]
         holder.textViewMovieName.text = currentMovie.movieName
-        holder.textViewMovieDuration.text = currentMovie.movieDuration.toString()
+        holder.textViewMovieDuration.text = currentMovie.movieDuration.toString() + " min"
         holder.textViewMovieYearRelease.text = currentMovie.movieYear.toString()
         holder.textViewMovieGenre.text = currentMovie.movieGenre
         displayImage(holder.itemView.context, holder.imageView, currentMovie.movieUri)

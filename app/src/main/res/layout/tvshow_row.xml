@@ -36,7 +36,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="Movie name: "
+                    android:text="Tv show name: "
                     card_view:layout_constraintBottom_toTopOf="@+id/labelTvShowNumberOfSeassons"
                     card_view:layout_constraintStart_toEndOf="@+id/imageViewTvShow"
                     card_view:layout_constraintTop_toTopOf="@+id/imageViewTvShow" />
@@ -58,7 +58,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Movie genre: "
+                    android:text="Number of seassons: "
                     card_view:layout_constraintBottom_toTopOf="@+id/labelTvShowYear"
                     card_view:layout_constraintStart_toStartOf="@+id/labelTvShowName"
                     card_view:layout_constraintTop_toBottomOf="@+id/labelTvShowName" />
@@ -67,10 +67,11 @@
                     android:id="@+id/textViewNumberOfSeassons"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     card_view:layout_constraintEnd_toEndOf="parent"
-                    card_view:layout_constraintStart_toStartOf="@+id/textViewTvShowName"
+                    card_view:layout_constraintStart_toEndOf="@id/labelTvShowNumberOfSeassons"
                     card_view:layout_constraintTop_toBottomOf="@+id/textViewTvShowName" />
 
             <TextView
@@ -90,7 +91,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_height="wrap_content"
                     card_view:layout_constraintEnd_toEndOf="parent"
-                    card_view:layout_constraintStart_toStartOf="@+id/textViewNumberOfSeassons"
+                    card_view:layout_constraintStart_toStartOf="@+id/textViewTvShowName"
                     card_view:layout_constraintTop_toBottomOf="@+id/textViewNumberOfSeassons"/>
 
 
@@ -100,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
-                    android:text="Duration: "
+                    android:text="Description: "
                     card_view:layout_constraintBottom_toBottomOf="@+id/imageViewTvShow"
                     card_view:layout_constraintStart_toStartOf="@+id/labelTvShowYear"
                     card_view:layout_constraintTop_toBottomOf="@+id/labelTvShowYear" />
@@ -113,7 +114,7 @@
                     android:layout_marginEnd="16dp"
                     android:singleLine="true"
                     card_view:layout_constraintEnd_toEndOf="parent"
-                    card_view:layout_constraintStart_toStartOf="@+id/textViewTvShowYear"
+                    card_view:layout_constraintStart_toStartOf="@+id/textViewTvShowName"
                     card_view:layout_constraintTop_toBottomOf="@+id/textViewTvShowYear" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.movietracker.R
 import com.example.movietracker.dao.tvshow.TvShow
 import com.example.movietracker.view_models.TvShowViewModel
-import kotlinx.android.synthetic.main.activity_proba.*
+import kotlinx.android.synthetic.main.activity_tvshow_info.*
 
 class ContentDetails : AppCompatActivity(), View.OnClickListener {
 
@@ -16,13 +16,15 @@ class ContentDetails : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_proba)
+        setContentView(R.layout.activity_tvshow_info)
         tvShowViewModel = ViewModelProviders.of(this).get(TvShowViewModel::class.java)
         buttonIncrementEp.setOnClickListener(this)
         buttonIncrementSe.setOnClickListener(this)
         show = intent.getSerializableExtra("ob") as TvShow
         textViewSerijalCurrent.text = show.tvshowCurrentSeasson.toString()
         textViewEpizodaCurrent.text = show.tvshowCurrentEpisode.toString()
+        textViewTvShowName.text = show.tvshowName
+        textViewTvShowDescription.text = show.tvshowDescription
     }
 
     override fun onClick(v: View?) {
@@ -33,17 +35,18 @@ class ContentDetails : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun incrementEp() {
-        textViewEpizodaCurrent.text = textViewEpizodaCurrent.text.toString().toInt().inc().toString()
+        textViewEpizodaCurrent.text =
+            textViewEpizodaCurrent.text.toString().toInt().inc().toString()
         show.tvshowCurrentEpisode = show.tvshowCurrentEpisode.inc()
         tvShowViewModel.updateTvShow(show)
     }
 
     private fun incrementSe() {
-        textViewSerijalCurrent.text = textViewSerijalCurrent.text.toString().toInt().inc().toString()
+        textViewSerijalCurrent.text =
+            textViewSerijalCurrent.text.toString().toInt().inc().toString()
         show.tvshowCurrentSeasson = show.tvshowCurrentSeasson.inc()
         show.tvshowCurrentEpisode = 0
         textViewEpizodaCurrent.text = 0.toString()
         tvShowViewModel.updateTvShow(show)
     }
-
 }
