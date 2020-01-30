@@ -11,6 +11,8 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getMovies() = repository.getMovies()
 
+    fun getMovies(name : String) = repository.getMoviesByFilter(name)
+
     fun insertMovie(movie: Movie) {
         repository.insertMovies(movie)
     }

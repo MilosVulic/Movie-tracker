@@ -24,6 +24,8 @@ class TvShowRepository(application: Application) : CoroutineScope {
 
     fun getTvShows() = tvShowDao?.getAll()
 
+    fun getTvShowsByName(name: String) = tvShowDao?.getTvShowByFilter(name)
+
     fun insertTvShow(tvShow: TvShow) {
         launch { addTvShow(tvShow) }
     }

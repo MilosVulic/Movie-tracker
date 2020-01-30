@@ -1,7 +1,6 @@
 package com.example.movietracker.adapters
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +19,8 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieHolder>() {
     private var listMovies: List<Movie> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.movie_row, parent, false)
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.movie_row, parent, false)
         return MovieHolder(itemView)
     }
 
@@ -54,19 +54,11 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieHolder>() {
             .into(imageView)
     }
 
-    inner class MovieHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+    inner class MovieHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var textViewMovieName: TextView = itemView.findViewById(R.id.textVieMovieName)
         var textViewMovieGenre: TextView = itemView.findViewById(R.id.textViewMovieGenre)
         var textViewMovieYearRelease: TextView = itemView.findViewById(R.id.textViewMovieYear)
         var textViewMovieDuration: TextView = itemView.findViewById(R.id.textViewMovieDuration)
         var imageView: ImageView = itemView.findViewById(R.id.imageViewMovie)
-
-        init {
-            itemView.setOnClickListener(this)
-        }
-
-        override fun onClick(v: View?) {
-            Log.d("tagic","evo me ovde xd ")
-        }
     }
 }

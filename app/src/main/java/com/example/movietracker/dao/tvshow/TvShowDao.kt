@@ -12,6 +12,9 @@ interface TvShowDao {
     @Query("SELECT * FROM tvshow WHERE tvshow_name LIKE :tvshow_name")
     fun findByTvShowName(tvshow_name: String): TvShow
 
+    @Query("SELECT * FROM tvshow WHERE tvshow_name LIKE :filter ")
+    fun getTvShowByFilter(filter: String): LiveData<List<TvShow>>
+
     @Insert
     fun insertAll(vararg tvShow: TvShow)
 

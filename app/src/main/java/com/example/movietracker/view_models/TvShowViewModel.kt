@@ -11,6 +11,8 @@ class TvShowViewModel(application: Application) : AndroidViewModel(application) 
 
     fun getTvShows() = repository.getTvShows()
 
+    fun getTvShowsByName(name : String) = repository.getTvShowsByName(name)
+
     fun insertTvShow(tvShow: TvShow) {
         repository.insertTvShow(tvShow)
     }

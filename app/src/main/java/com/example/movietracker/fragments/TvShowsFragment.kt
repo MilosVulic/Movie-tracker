@@ -1,10 +1,11 @@
 package com.example.movietracker.fragments
 
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.view.inputmethod.EditorInfo
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -36,6 +37,7 @@ class TvShowsFragment : Fragment() {
         view.tvShows_recycler_view.adapter = adapter
         tvShowViewModel.getTvShows()?.observe(this, Observer<List<TvShow>> { t -> adapter.setTvShows(t!!) })
         enableSwipeToDeleteAndUndo(view.tvShows_recycler_view)
+        setHasOptionsMenu(true)
         return view
     }
 
@@ -50,5 +52,26 @@ class TvShowsFragment : Fragment() {
             }
         val itemTouchhelper = ItemTouchHelper(swipeToDeleteCallback)
         itemTouchhelper.attachToRecyclerView(recyclerView)
+    }
+
+    @SuppressLint("PrivateResource")
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater){
+        inflater.inflate(R.menu.search_menu, menu)
+        val mSearch = menu.findItem(R.id.action_search)
+        val mSearchView = mSearch.actionView as SearchView
+        mSearchView.queryHint = "Search"
+        mSearchView.imeOptions = EditorInfo.IME_ACTION_DONE
+
+        mSearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                tvShowViewModel.getTvShowsByName("%$newText%")?.observe(viewLifecycleOwner, Observer<List<TvShow>> { t -> adapter.setTvShows(t!!) })
+                return true
+            }
+        })
+        return super.onCreateOptionsMenu(menu, inflater)
     }
 }

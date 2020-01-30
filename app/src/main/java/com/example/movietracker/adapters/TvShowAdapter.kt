@@ -20,6 +20,7 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.TvShowHolder>() {
 
     private var listTvShows: List<TvShow> = ArrayList()
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TvShowHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(R.layout.tvshow_row, parent, false)
@@ -62,11 +63,13 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.TvShowHolder>() {
             .into(imageView)
     }
 
+
     inner class TvShowHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var textViewTvShowName: TextView = itemView.findViewById(R.id.textViewTvShowName)
         var textViewDescription: TextView = itemView.findViewById(R.id.textViewTvShowDescription)
         var textViewTvShowRelealse: TextView = itemView.findViewById(R.id.textViewTvShowYear)
-        var textViewNumberOfSeassons: TextView = itemView.findViewById(R.id.textViewNumberOfSeassons)
+        var textViewNumberOfSeassons: TextView =
+            itemView.findViewById(R.id.textViewNumberOfSeassons)
         var imageView: ImageView = itemView.findViewById(R.id.imageViewTvShow)
         var cardViewTvShow: CardView = itemView.findViewById(R.id.card_view)
     }

@@ -12,6 +12,9 @@ interface MovieDao {
     @Query("SELECT * FROM movie WHERE movie_name LIKE :movie_name")
     fun findByMovieName(movie_name: String): Movie
 
+    @Query("SELECT * FROM movie WHERE movie_name LIKE :filter ")
+    fun getMovieByFilter(filter: String): LiveData<List<Movie>>
+
     @Insert
     fun insertAll(vararg todo: Movie)
 

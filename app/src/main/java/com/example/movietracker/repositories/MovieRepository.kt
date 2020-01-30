@@ -24,6 +24,8 @@ class MovieRepository(application: Application) : CoroutineScope {
 
     fun getMovies() = movieDao?.getAll()
 
+    fun getMoviesByFilter(name : String) = movieDao?.getMovieByFilter(name)
+
     fun insertMovies(movie: Movie) {
         launch { addMovie(movie) }
     }
