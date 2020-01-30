@@ -6,127 +6,117 @@
         android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_tv_show"
+            android:id="@+id/card_view"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
             card_view:cardCornerRadius="2dp"
-            card_view:cardElevation="10dp">
+            card_view:cardElevation="3dp">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
             <ImageView
                     android:id="@+id/imageViewTvShow"
                     android:layout_width="100dp"
-                    android:layout_height="170dp"
-                    android:scaleType="centerCrop" />
+                    android:layout_height="160dp"
+                    android:scaleType="centerCrop"
+                    card_view:layout_constraintBottom_toBottomOf="parent"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                    android:id="@+id/linearLayoutCardView"
-                    android:layout_width="match_parent"
-                    android:layout_height="170dp"
-                    android:orientation="vertical"
-                    android:padding="10dp">
 
-                <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="center|center_horizontal"
-                        android:orientation="horizontal">
+            <TextView
+                    android:id="@+id/labelTvShowName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Movie name: "
+                    card_view:layout_constraintBottom_toTopOf="@+id/labelTvShowNumberOfSeassons"
+                    card_view:layout_constraintStart_toEndOf="@+id/imageViewTvShow"
+                    card_view:layout_constraintTop_toTopOf="@+id/imageViewTvShow" />
 
-                    <TextView
-                            android:id="@+id/labelTvShowName"
-                            android:layout_width="100dp"
-                            android:layout_height="wrap_content"
-                            android:text="Tv show name: " />
+            <TextView
+                    android:id="@+id/textViewTvShowName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    card_view:layout_constraintBottom_toBottomOf="@+id/labelTvShowName"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toEndOf="@+id/labelTvShowName"
+                    card_view:layout_constraintTop_toTopOf="@+id/labelTvShowName" />
 
-                    <TextView
-                            android:id="@+id/textViewTvShowName"
-                            android:layout_width="100dp"
-                            android:layout_height="wrap_content" />
 
-                </LinearLayout>
+            <TextView
+                    android:id="@+id/labelTvShowNumberOfSeassons"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Movie genre: "
+                    card_view:layout_constraintBottom_toTopOf="@+id/labelTvShowYear"
+                    card_view:layout_constraintStart_toStartOf="@+id/labelTvShowName"
+                    card_view:layout_constraintTop_toBottomOf="@+id/labelTvShowName" />
 
-                <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="center|center_horizontal"
-                        android:orientation="horizontal">
+            <TextView
+                    android:id="@+id/textViewNumberOfSeassons"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toStartOf="@+id/textViewTvShowName"
+                    card_view:layout_constraintTop_toBottomOf="@+id/textViewTvShowName" />
 
-                    <TextView
-                            android:id="@+id/labelTvShowNumberOfSeassons"
-                            android:layout_width="150dp"
-                            android:layout_height="wrap_content"
-                            android:text="Number of seassons: " />
+            <TextView
+                    android:id="@+id/labelTvShowYear"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Release year: "
+                    card_view:layout_constraintBottom_toTopOf="@+id/labelDescription"
+                    card_view:layout_constraintStart_toStartOf="@+id/labelTvShowNumberOfSeassons"
+                    card_view:layout_constraintTop_toBottomOf="@+id/labelTvShowNumberOfSeassons" />
 
-                    <TextView
-                            android:id="@+id/textViewNumberOfSeassons"
-                            android:layout_width="50dp"
-                            android:layout_height="wrap_content" />
+            <TextView
+                    android:id="@+id/textViewTvShowYear"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_height="wrap_content"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toStartOf="@+id/textViewNumberOfSeassons"
+                    card_view:layout_constraintTop_toBottomOf="@+id/textViewNumberOfSeassons"/>
 
-                </LinearLayout>
 
-                <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="center|center_horizontal"
-                        android:orientation="horizontal">
+            <TextView
+                    android:id="@+id/labelDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Duration: "
+                    card_view:layout_constraintBottom_toBottomOf="@+id/imageViewTvShow"
+                    card_view:layout_constraintStart_toStartOf="@+id/labelTvShowYear"
+                    card_view:layout_constraintTop_toBottomOf="@+id/labelTvShowYear" />
 
-                    <TextView
-                            android:id="@+id/labelTvShowYear"
-                            android:layout_width="100dp"
-                            android:layout_height="wrap_content"
-                            android:text="Release year: " />
+            <TextView
+                    android:id="@+id/textViewTvShowDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:singleLine="true"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toStartOf="@+id/textViewTvShowYear"
+                    card_view:layout_constraintTop_toBottomOf="@+id/textViewTvShowYear" />
 
-                    <TextView
-                            android:id="@+id/textViewTvShowYear"
-                            android:layout_width="50dp"
-                            android:layout_height="wrap_content" />
-
-                    <Button
-                            android:id="@+id/buttonDeleteTvShow"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Delete" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center|center_horizontal"
-                        android:orientation="horizontal">
-
-                    <TextView
-                            android:id="@+id/labelDescription"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:text="Description: "
-                            android:layout_width="0dp" />
-
-                    <TextView
-                            android:id="@+id/textViewTvShowDescription"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="4"
-                            android:layout_width="0dp" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 </LinearLayout>
