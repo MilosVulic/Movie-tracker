@@ -4,3 +4,5 @@ Keep track of your watched movies and tv shows, analyze the statistics and see w
 # Description
 An android application in kotlin with the androidx support library and couple of other third party libraries
 
+![list of movies](https://github.com/MilosVulic/Movie-tracker/blob/master/list.jpg)
+
